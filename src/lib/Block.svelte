@@ -1,8 +1,7 @@
 <div class="shadow-md border mx-14 items-center relative" >
    
 <div class="flex bg-zinc-300">
-    <button on:click={remove} class="absolute right-0 top-0 -mt-7 rounded-full text-center bg-red-500 text-small text-white hover:bg-red-700" >x</button>
-
+    <button on:click={remove} class="absolute right-0 top-0 -mt-0 -mr-6 text-center btn btn-outline-danger btn-sm" >x</button>
     <!-- rate button -->
     <div class="form-group"> 
         <label for="rate">Rate</label>
