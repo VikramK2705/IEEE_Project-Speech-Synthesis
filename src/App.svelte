@@ -1,16 +1,13 @@
 <script>
-  import Block from './lib/Block.svelte';
   import Voices from './lib/Voices.svelte';
   import Header from './lib/Header.svelte';
-    import Template from './lib/Template.svelte';
-    import { slide,fly } from 'svelte/transition';
-    import CustomBlock from './lib/CustomBlock.svelte';
-    import { onMount } from 'svelte';
-    import Footer from './lib/Footer.svelte';
-
-  let selected;
+  import Template from './lib/Template.svelte';
+  import { slide,fly } from 'svelte/transition';
+  import CustomBlock from './lib/CustomBlock.svelte';
+  import Footer from './lib/Footer.svelte';
+   let selected;
   let p;
-  $:stat1="";
+  $: stat1="";
   $: playVoice=""; 
   $: blockAvail=true;
  
@@ -19,7 +16,7 @@
        playVoice=e.detail;
   }
 
-  let customblocks=[{iden:1,statement:null},{iden:2,statement:'A very good morning'},];
+  let customblocks=[{iden:1,statement:null},{iden:2,statement:null},];
   const clickHandle=(f)=>{
       stat1=f.detail;
       customblocks=[{iden:customblocks.length+1,statement:f.detail},...customblocks,];
@@ -43,9 +40,7 @@
         blockAvail=true;
       }
     }
-    onMount(()=>{
-      
-    });
+    
 </script>
 <main class="content">
   
@@ -79,12 +74,10 @@
             
     </div>
     <div class="mx-6 border border-solid border-lime-600 px-6 py-3 relative m-2 right-0" >
-      <Template on:clicked={clickHandle} {p}/>
+      <Template on:clicked={clickHandle}/>
       <!-- <p>{stat1}</p> -->
     </div>
 </div>
-
-
 
 <Footer />
 </main>
@@ -101,8 +94,6 @@
     width: 100%;
     
     background-image: linear-gradient(to bottom right,rgb(0, 0, 0));
-  
-   
 }
 
 </style>

@@ -1,13 +1,27 @@
 <script>
-    import logo from '../assets/logo.jpg';
+  import logo from '../assets/logo.jpg';
+  import { writable } from 'svelte/store';
+  import Modal, { bind } from 'svelte-simple-modal';
+  import Popup from './Popup.svelte';
+  import { onMount } from 'svelte';
+  const modal = writable(null);
+  const showModal = () => modal.set(Popup);
+  onMount(()=>{
+      showModal
+  });
 </script>
-<div class="header float-left">
+<div class="header float-left flex">
+    
+      
     <div class="logo">
     <img class="image" src={logo} width="60" height="60" alt="logo" style="border-radius:100"></div>
     <div class="speech">
-    <h1 class="-mt-4" data-text="Speech Synthesizer.......">&nbsp;Speech Synthesiser</h1></div>   
+    <h1 class="-mt-4 ml-96" data-text="Speech Synthesizer.......">&nbsp;Speech Synthesiser</h1></div>  
   </div>
-
+  <Modal show={$modal}>
+    <button style="" class="  mt-12 " on:click={showModal}>Know More</button>
+  </Modal>
+  
 <style>
     .header {  
     width: 100%;
@@ -36,17 +50,5 @@ h1 {
     padding-top: 10px;
     
 }
-h1 ::before {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    color: rgb(255, 255, 255);
-    -webkit-text-stroke: 2px black;
-    border-right: 1px solid rgb(0, 0, 0);
-    overflow: hidden;
-    
-}
+
 </style>
