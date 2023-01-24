@@ -20,6 +20,9 @@
   const clickHandle=(f)=>{
       stat1=f.detail;
       customblocks=[{iden:customblocks.length+1,statement:f.detail},...customblocks,];
+      if(customblocks.length!=0){
+        blockAvail=true;
+      }
     }
   
   
