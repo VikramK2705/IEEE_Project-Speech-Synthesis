@@ -54,7 +54,7 @@
     <Voices on:selectedVoice={handleVoice} {selected}/>
   <p class="bg-blue-300 w-96 ml-96 squared-2xl mt-1 ">Select the voices from above Drop Down List</p>
   </div>
-  <button class=" border-black-400 my-1 bg-blue-300 hover:bg-blue-300 font-bold " id={blockAvail?'divfix':''} type='button' on:click={add}>Add a Block</button>
+  <button class=" border-black-400 my-1 bg-blue-300 hover:bg-blue-300 font-bold " style="padding:0.5em;font-weight: bold;" id={blockAvail?'divfix':''} type='button' on:click={add}>Add a Block</button>
   <div class="flex">
   
     <div class="">

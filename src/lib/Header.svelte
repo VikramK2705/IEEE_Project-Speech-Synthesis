@@ -13,13 +13,13 @@
 <div class="header float-left flex">
     
       
-    <div class="logo">
+    <div class="logo" style="">
     <img class="image" src={logo} width="60" height="60" alt="logo" style="border-radius:100"></div>
     <div class="speech">
-    <h1 class="-mt-4 ml-96" data-text="Speech Synthesizer.......">&nbsp;Speech Synthesiser</h1></div>  
+    <center><h1 class="-mt-4 ml-96" style="font-size:3em" data-text="Speech Synthesizer.......">&nbsp;Speech Synthesiser</h1></center></div>  
   </div>
   <Modal show={$modal}>
-    <button style="" class="  mt-12 " on:click={showModal}>Know More</button>
+    <button class=" mt-12 " style="background-color:floralwhite; padding:0.5em" on:click={showModal}>Know More</button>
   </Modal>
   
 <style>
