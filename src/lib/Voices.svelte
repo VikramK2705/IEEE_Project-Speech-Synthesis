@@ -29,7 +29,7 @@
   </script>
   
 
-    <select bind:value={selected} on:change={selectedVoice} on:load={selectedVoice} style="left:0em">
+    <select bind:value={selected} on:change={selectedVoice} on:load={selectedVoice} class="bg-white" style="left:0em">
         {#each voices as voice}
             <option value={voice}>
                 {voice.name}
