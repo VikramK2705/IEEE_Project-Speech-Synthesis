@@ -55,7 +55,8 @@
         dispatch('remove',custblock.iden);
        };
        let p_range=1,r_range=1,v_range=0.5;
-       export let custblock,j,playVoice;
+       export let custblock,playVoice;
+       export let j;
        let speakText;
        if(custblock.statement===null){
           speakText="";
@@ -112,8 +113,8 @@
     
     //Speak
     const speak=()=>{
-        console.log(speakText);
         const utterThis=new SpeechSynthesisUtterance(speakText);
+        state=true;
         //Initialising Voice
         utterThis.voice=playVoice;
         //Check if speaking
@@ -126,10 +127,7 @@
         
          
         if(speakText !==''){
-            // body.style.background='url(../assets/wave_sound.gif) ';
-            // body.style.backgroundRepeat='repeat-x';
-            // body.style.backgroundSize='100% 100%';
-    
+                
             //Speak end
             utterThis.onend=e=>{
                 console.log('Done speaking...');
@@ -143,9 +141,9 @@
                 console.error('Something went wrong');
                 synth.cancel();
             }
-            // speakText.onend = function(event) {
-            //     console.log(event.name + ' boundary reached after ' + event.elapsedTime + ' seconds.');
-            //   }
+            speakText.onend = function(event) {
+                console.log(event.name + ' boundary reached after ' + event.elapsedTime + ' seconds.');
+              }
           
           
             //Set pitch and rate
