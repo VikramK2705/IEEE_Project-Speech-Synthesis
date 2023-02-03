@@ -73,9 +73,6 @@
      $:state=true;
      var i=0;
      const utterThis=new SpeechSynthesisUtterance(speakText);
-    // //Create constant from html elements
-    const textInput=document.getElementById('#text-input');
-    const body= document.querySelector('body');
     
     const pause=()=>{
         if(synth.paused){
@@ -166,27 +163,6 @@
        
     };
     
-    // //Event Listeners
-    
-    // //Text Form Submit
-    // textForm.addEventListener('submit',e=>{
-    //     e.preventDefault();
-    //     speak();
-    //      // @ts-ignore
-    //     textInput.blur();
-    // });
-    // // textForm.addEventListener('stop',e=>stop());
-    
-    
-    // // stop.addEventListener('click',synth.cancel);
-    // //Voice select change
-    // voiceSelect.addEventListener('change',e=>{
-    //      // @ts-ignore
-     
-    //     else{
-    //     speak()
-    //     }
-    // });
     
     </script>
     

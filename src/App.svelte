@@ -78,7 +78,6 @@
     </div>
     <div class="mx-6 border border-solid border-lime-600 px-6 py-3 relative m-2 right-0" >
       <Template on:clicked={clickHandle}/>
-      <!-- <p>{stat1}</p> -->
     </div>
 </div>
 
