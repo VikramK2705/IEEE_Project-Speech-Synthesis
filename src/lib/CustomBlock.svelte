@@ -141,7 +141,7 @@
                 console.error('Something went wrong');
                 synth.cancel();
             }
-            speakText.onend = function(event) {
+            utterThis.onend = function(event) {
                 console.log(event.name + ' boundary reached after ' + event.elapsedTime + ' seconds.');
               }
           
