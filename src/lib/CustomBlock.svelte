@@ -121,6 +121,7 @@
         if(synth.speaking){
             console.error('Already speaking...');
             synth.cancel();
+            i=0;
             synth.speak(utterThis);
             return;
         }
@@ -132,6 +133,8 @@
             utterThis.onend=e=>{
                 console.log('Done speaking...');
                 state=true;
+                i=0;
+                alert(e.name + 'Spoken for ' + (e.elapsedTime/1000).toFixed(2) + ' seconds.');
                 synth.cancel();
                 // body.style.background='#141414 ';
             }
@@ -139,12 +142,9 @@
             //Speak Error
             utterThis.onerror =e=>{
                 console.error('Something went wrong');
+                i=0;
                 synth.cancel();
-            }
-            utterThis.onend = function(event) {
-                console.log(event.name + ' boundary reached after ' + event.elapsedTime + ' seconds.');
-              }
-          
+            }          
           
             //Set pitch and rate
             utterThis.rate=r_range;
