@@ -71,6 +71,8 @@
     //Initialize WebSpeech API
     const synth=window.speechSynthesis;
      $:state=true;
+     var i=0;
+     const utterThis=new SpeechSynthesisUtterance(speakText);
     // //Create constant from html elements
     const textInput=document.getElementById('#text-input');
     const body= document.querySelector('body');
@@ -78,13 +80,32 @@
     const pause=()=>{
         if(synth.paused){
             state=true;
+            utterThis.voice=playVoice;
+            utterThis.rate=r_range;
+            utterThis.pitch=p_range;
+            utterThis.volume=v_range;
             console.log("resumed");
             synth.resume();
         }
         else{
             state=false;
+            console.log(i);
+            i=i+1;
             console.log("paused");
+            if(i>=2){
+                i=0;
+                state=true;
+                utterThis.voice=playVoice;
+            utterThis.rate=r_range;
+            utterThis.pitch=p_range;
+            utterThis.volume=v_range;
+                synth.resume();
+
+            }
+            else{
             synth.pause();
+            }
+
         }
     }
     const stop=()=>{
@@ -94,6 +115,7 @@
     
     //Speak
     const speak=()=>{
+        console.log(speakText);
         const utterThis=new SpeechSynthesisUtterance(speakText);
         //Initialising Voice
         utterThis.voice=playVoice;
